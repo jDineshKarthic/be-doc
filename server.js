@@ -3,12 +3,14 @@ const app = express();
 require('dotenv').config();
 const dbConfig = require('./config/dbConfig');
 const path = require('path');
+const cors = require('cors');
 
 // import { fileURLToPath } from 'url';
 // Resolving dirname for ES module
 const _filename = __filename;
 const _dirname = path.dirname(_filename);
 app.use(express.json());
+app.use(cors());
 
 const userRoute = require('./routes/userRoute');
 const adminRoute = require('./routes/adminRoute');
